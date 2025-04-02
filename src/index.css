@@ -1,0 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');
+@import "tailwindcss";
+
+@theme {
+    --color-red-10: #E50000 ;
+    --color-black-50: #262626 ;
+    --color-gray-15: #999999 ;
+    --color-black-10: #1A1A1A ;
+}
+
+html{
+    overflow-x: hidden;
+}
+
+body{
+    font-family: "Manrope", sans-serif;
+}
+
+::selection{
+    @apply text-red-10 bg-black;
+}
+
+@layer base{
+    .landpage{
+        @apply w-screen min-h-dvh flex items-end justify-center overflow-x-hidden;
+        background-image: url(./img/land-bg.png);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center center;
+    }
+
+    .max-container{
+        @apply container mx-auto px-4 md:px-6 lg:px-8;
+    }
+}
+
