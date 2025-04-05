@@ -3,6 +3,9 @@ import LandPage from "./components/LandPage";
 import NavBar from "./components/NavBar";
 import Features from "./components/Features";
 import Questions from "./components/Questions";
+import Planes from "./components/Planes";
+import Start from "./components/Start";
+import Footer from "./components/Footer";
 
 const App = () => {
   return (
@@ -11,6 +14,9 @@ const App = () => {
       <LandPage />
       <Features />
       <Questions />
+      <Planes />
+      <Start />
+      <Footer />
     </div>
   );
 };

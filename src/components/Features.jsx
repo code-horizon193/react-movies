@@ -16,7 +16,7 @@ const Features = () => {
 
           <div className="mt-5 px-3 grid-cols-1 grid sm:grid-cols-2 md:grid-cols-3 gap-3">
             {devices.map((device, i) => (
-              <div className="bg-black-10 p-3.5 rounded-sm border border-transparent hover:border-red-10 cursor-pointer">
+              <div className="bg-black-10 p-3.5 rounded-sm border border-transparent hover:border-slate-500/60 cursor-pointer">
                 <div className="flex items-center gap-3">
                   <span className="size-10 bg-transparent text-red-10 text-2xl grid place-items-center">
                     {<device.icon />}

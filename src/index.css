@@ -32,5 +32,13 @@ body{
     .max-container{
         @apply container mx-auto px-4 md:px-6 lg:px-8;
     }
+
+    .start-page{
+        @apply w-screen min-h-[236px] ;
+        background-image: url(./img/story-bg.png);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center center;
+    }
 }
 
