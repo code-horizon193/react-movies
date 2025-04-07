@@ -85,7 +85,7 @@ const DisplayMovies = () => {
                       src={
                         item.poster_path
                           ? `https://image.tmdb.org/t/p/w200${item.poster_path}`
-                          : "/img/error.jpg"
+                          : "img/error.jpg"
                       }
                       alt={list.original_title}
                     />
