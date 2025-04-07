@@ -23,7 +23,7 @@ body{
 @layer base{
     .landpage{
         @apply w-screen min-h-dvh flex items-end justify-center overflow-x-hidden;
-        background-image: url(./img/land-bg.png);
+        background-image: url(../public/img/land-bg.png);
         background-repeat: no-repeat;
         background-size: cover;
         background-position: center center;
@@ -35,7 +35,7 @@ body{
 
     .start-page{
         @apply w-screen min-h-[236px] ;
-        background-image: url(./img/story-bg.png);
+        background-image: url(../public/img/story-bg.png);
         background-repeat: no-repeat;
         background-size: cover;
         background-position: center center;
