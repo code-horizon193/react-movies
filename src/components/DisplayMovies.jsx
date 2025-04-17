@@ -33,7 +33,7 @@ const DisplayMovies = () => {
       const data = await response.json();
       setMovieGenreList(data.genres); // Set genres
 
-      // Fetch movies for each genre (you can parallelize requests using Promise.all)
+      // Fetch movies for each genre 
       const genreMoviesPromises = data.genres.map(async (genre) => {
         const genreMoviesEndpoint = `${BASE_URL}/discover/movie?api_key=${API_KEY}&with_genres=${genre.id}&language=en-US`;
         const genreMoviesResponse = await fetch(genreMoviesEndpoint, options);
@@ -49,7 +49,7 @@ const DisplayMovies = () => {
 
       // Wait for all genre movie requests to complete
       const genreMovies = await Promise.all(genreMoviesPromises);
-      setMoviesByGenre(genreMovies); // Set movies by genre
+      setMoviesByGenre(genreMovies); 
     } catch (error) {
       setError(error.message);
       console.log("Error fetching", error);
@@ -70,14 +70,16 @@ const DisplayMovies = () => {
           description="Whether you're looking for a comedy to make you laugh, a drama to make you think, or a documentary to learn something new"
         />
         {isloading ? (
-          <span class="loader ml-5 my-5"></span>
+          <div className="w-full mt-6 resize">
+            <span class="loader absolute left-1/2 -translate-x-1/2"></span>
+          </div>
         ) : error ? (
-          <p className="text-red-10 font-semibold text-center">{error}</p>
+          <p className="text-red-10 font-semibold underline text-center text-xl mt-5">{error}</p>
         ) : (
-          <div className="mt-5 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 p-1">
+          <div className="mt-7 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 p-1">
             {moviesByGenre.map((list, index) => (
-              <div className="p-3 size-full bg-black-50 rounded-sm" key={index}>
-                <div className="size-full grid grid-cols-2 gap-1">
+              <div className="p-2 bg-black-50 rounded-sm" key={index}>
+                <div className=" grid grid-cols-2 gap-1">
                   {list.movies.slice(0, 4).map((item, i) => (
                     <img
                       key={i}
@@ -92,7 +94,7 @@ const DisplayMovies = () => {
                   ))}
                 </div>
 
-                <p className="text-white whitespace-nowrap text-base font-semibold cursor-pointer -translate-y-1">
+                <p className="text-white whitespace-nowrap text-lg font-semibold transition-all duration-300 hover:text-red-10 cursor-pointer mt-2 hover:underline">
                   {list.genre}
                 </p>
               </div>
